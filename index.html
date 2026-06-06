@@ -1,0 +1,802 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Cup 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        #html-content-type-area * {
+            box-sizing: border-box;
+        }
+
+        #html-content-type-area {
+            margin: 0;
+            min-width: 320px;
+            overflow-x: hidden;
+            background: #1F1F1F;
+            color: #f2f4f7;
+            font-family: Poppins, Arial, sans-serif;
+        }
+
+        #html-content-type-area a,
+        #html-content-type-area button,
+        #html-content-type-area label {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #html-content-type-area img {
+            display: block;
+            max-width: 100%;
+            border: 0;
+            user-select: none;
+        }
+
+        #html-content-type-area .wc-hidden-input {
+            display: none;
+        }
+
+        #html-content-type-area .wc-page {
+            width: 100%;
+            min-height: 100vh;
+            padding: 26px 16px 42px;
+            background: #1F1F1F;
+        }
+
+        #html-content-type-area .wc-wrap {
+            width: 100%;
+            max-width: 1070px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #html-content-type-area .wc-gradient-text {
+            color: #ffdf43;
+            background: linear-gradient(90deg, #ffeda0 8.11%, #edd777 47.53%, #cda114 91.74%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #html-content-type-area .wc-hero {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        #html-content-type-area .wc-hero img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        #html-content-type-area .wc-hero-mobile {
+            display: none;
+        }
+
+        #html-content-type-area .wc-intro {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            min-height: 162px;
+            margin-top: 78px;
+            padding: 24px 168px 20px 42px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #171716;
+        }
+
+        #html-content-type-area .wc-intro::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -170px;
+            width: 420px;
+            height: 150px;
+            transform: translateX(-50%);
+            background: radial-gradient(ellipse at center, #e19800 0%, #fff86b 24%, #f7d14e 46%, #d4a041 62%, rgba(212, 160, 65, 0) 100%);
+            filter: blur(48px);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        #html-content-type-area .wc-intro-copy {
+            position: relative;
+            z-index: 1;
+            max-width: 590px;
+            margin: 0 auto;
+            transform: translateX(50px);
+            text-align: center;
+        }
+
+        #html-content-type-area .wc-intro h1 {
+            margin: 0 0 6px;
+            font-size: 26px;
+            line-height: 1.18;
+            font-weight: 600;
+        }
+
+        #html-content-type-area .wc-intro p {
+            margin: 0 0 6px;
+            font-size: 18px;
+            line-height: 26px;
+            font-weight: 400;
+            color: #f2f4f7;
+        }
+
+        #html-content-type-area .wc-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        #html-content-type-area .wc-cup {
+            position: absolute;
+            right: 10px;
+            top: 2px;
+            bottom: 2px;
+            z-index: 1;
+            width: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 0;
+        }
+
+        #html-content-type-area .wc-cup img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform: scale(1.08);
+            transform-origin: center right;
+        }
+
+        #html-content-type-area .wc-match-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            width: min(100%, 660px);
+            margin: 56px auto 0;
+        }
+
+        #html-content-type-area .wc-match-card {
+            position: relative;
+            display: block;
+            min-height: 116px;
+            color: #171716;
+            text-decoration: none;
+            outline: none;
+            -webkit-touch-callout: none;
+        }
+
+        #html-content-type-area .wc-match-card img {
+            width: 100%;
+            height: 112px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #html-content-type-area .wc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 210px;
+            min-height: 42px;
+            padding: 10px 26px;
+            border: 0;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #fff26b 0%, #f9d94f 46%, #dba82d 100%);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            color: #171716;
+            font-size: 16px;
+            line-height: 1;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+            #html-content-type-area .wc-match-card .wc-btn {
+                position: absolute;
+                left: 50%;
+                bottom: -10px;
+                transform: translateX(-50%);
+            }
+
+        #html-content-type-area .wc-calendar-head {
+            margin-top: 68px;
+            text-align: center;
+        }
+
+        #html-content-type-area .wc-calendar-head h2,
+        #html-content-type-area .wc-powers h2 {
+            margin: 0;
+            font-size: 24px;
+            line-height: 1.22;
+            font-weight: 600;
+        }
+
+        #html-content-type-area .wc-calendar-head p {
+            margin: 11px 0 0;
+            color: #f2f4f7;
+            font-size: 18px;
+            line-height: 1.3;
+            font-weight: 400;
+        }
+
+        #html-content-type-area .wc-tabs {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 17px;
+            width: 100% !important;
+            margin-top: 19px;
+        }
+
+        #html-content-type-area .wc-tabs>p,
+        #html-content-type-area .wc-tabs>div {
+            display: contents !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #html-content-type-area .wc-tab {
+            position: relative;
+            display: flex;
+            min-height: 84px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            background: #171716;
+            cursor: pointer;
+        }
+
+        #html-content-type-area .wc-tab::before {
+            content: "";
+            position: absolute;
+            inset: -28px 16px auto;
+            height: 50px;
+            background: radial-gradient(ellipse at center, #e19800 0%, #fff86b 24%, #f7d14e 46%, #d4a041 62%, rgba(212, 160, 65, 0) 100%);
+            filter: blur(28px);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+        }
+
+        #html-content-type-area .wc-tab-title,
+        #html-content-type-area .wc-tab-date {
+            position: relative;
+            z-index: 1;
+        }
+
+        #html-content-type-area .wc-tab-title {
+            margin-bottom: 13px;
+            font-size: 18px;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        #html-content-type-area .wc-tab-date {
+            display: inline-flex;
+            align-items: center;
+            color: #d9d9d9;
+            background: linear-gradient(90.07deg, #ffffff -15.74%, #737373 187.06%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 16px;
+            line-height: 1;
+            font-weight: 400;
+        }
+
+        #html-content-type-area .wc-tab-date-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            flex: 0 0 auto;
+        }
+
+        #html-content-type-area #wc-stage-1:checked~.wc-page .wc-tab-1,
+        #html-content-type-area #wc-stage-2:checked~.wc-page .wc-tab-2,
+        #html-content-type-area #wc-stage-3:checked~.wc-page .wc-tab-3 {
+            border-color: transparent;
+            background:
+                linear-gradient(#171716, #171716) padding-box,
+                linear-gradient(90deg, #ffeda0 8.11%, #edd777 47.53%, #cda114 91.74%) border-box;
+        }
+
+        #html-content-type-area #wc-stage-1:checked~.wc-page .wc-tab-1::before,
+        #html-content-type-area #wc-stage-2:checked~.wc-page .wc-tab-2::before,
+        #html-content-type-area #wc-stage-3:checked~.wc-page .wc-tab-3::before {
+            opacity: 0.42;
+        }
+
+        #html-content-type-area .wc-offers,
+        #html-content-type-area .wc-powers {
+            width: 100%;
+            margin-top: 18px;
+            padding: 26px 32px;
+            border-radius: 8px;
+            background: #171716;
+            backdrop-filter: blur(10px);
+        }
+
+        #html-content-type-area .wc-panel {
+            display: none;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        #html-content-type-area #wc-stage-1:checked~.wc-page .wc-panel-1,
+        #html-content-type-area #wc-stage-2:checked~.wc-page .wc-panel-2,
+        #html-content-type-area #wc-stage-3:checked~.wc-page .wc-panel-3 {
+            display: grid;
+        }
+
+        #html-content-type-area .wc-promo-link {
+            display: block;
+            min-width: 0;
+            border-radius: 8px;
+            color: inherit;
+            text-decoration: none;
+            outline: none;
+            -webkit-touch-callout: none;
+        }
+
+        #html-content-type-area .wc-promo-link img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        #html-content-type-area .wc-powers {
+            margin-top: 18px;
+            padding-top: 32px;
+            text-align: center;
+        }
+
+        #html-content-type-area .wc-powers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        #html-content-type-area .wc-powers-grid .wc-wide {
+            grid-column: 1 / 2;
+        }
+
+        #html-content-type-area .wc-powers-cta {
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        #html-content-type-area .wc-powers-cta .wc-btn {
+            min-width: 140px;
+            min-height: 36px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 900px) {
+            #html-content-type-area .wc-page {
+                padding-top: 18px;
+            }
+
+            #html-content-type-area .wc-intro {
+                margin-top: 42px;
+                padding: 22px 18px 20px 28px;
+            }
+
+            #html-content-type-area .wc-intro-copy {
+                max-width: none;
+                transform: none;
+            }
+
+            #html-content-type-area .wc-cup {
+                right: 0;
+                top: 6px;
+                bottom: 6px;
+                width: 128px;
+            }
+
+            #html-content-type-area .wc-offers,
+            #html-content-type-area .wc-powers {
+                padding: 18px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            #html-content-type-area .wc-page {
+                padding: 10px 8px 24px;
+            }
+
+            #html-content-type-area .wc-wrap {
+                max-width: 100%;
+            }
+
+            #html-content-type-area .wc-hero,
+            #html-content-type-area .wc-hero img {
+                border-radius: 7px;
+            }
+
+            #html-content-type-area .wc-hero-desktop {
+                display: none;
+            }
+
+            #html-content-type-area .wc-hero-mobile {
+                display: block;
+            }
+
+            #html-content-type-area .wc-intro {
+                grid-template-columns: 1fr;
+                min-height: 0;
+                margin-top: 18px;
+                padding: 18px 12px 18px;
+                text-align: center;
+            }
+
+            #html-content-type-area .wc-intro::before {
+                display: none;
+            }
+
+            #html-content-type-area .wc-intro h1 {
+                font-size: 22px;
+                line-height: 1.16;
+                margin-bottom: 8px;
+            }
+
+            #html-content-type-area .wc-intro p:first-of-type {
+                font-size: 14px;
+                line-height: 19px;
+            }
+
+            #html-content-type-area .wc-intro p:last-child {
+                font-size: 12px;
+                line-height: 17px;
+            }
+
+            #html-content-type-area .wc-cup {
+                display: none;
+            }
+
+            #html-content-type-area .wc-match-links {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+                width: 100%;
+                margin-top: 24px;
+            }
+
+            #html-content-type-area .wc-match-card {
+                min-height: 86px;
+                padding-bottom: 2px;
+            }
+
+            #html-content-type-area .wc-match-card img {
+                aspect-ratio: 326 / 150;
+                height: auto;
+            }
+
+            #html-content-type-area .wc-btn,
+            #html-content-type-area .wc-match-card .wc-btn {
+                min-width: 126px;
+                min-height: 32px;
+                padding: 6px 16px;
+                font-size: 12px;
+            }
+
+            #html-content-type-area .wc-powers-cta .wc-btn {
+                min-width: 156px;
+                min-height: 36px;
+                padding: 8px 22px;
+                font-size: 16px;
+            }
+
+            #html-content-type-area .wc-calendar-head {
+                margin-top: 34px;
+            }
+
+            #html-content-type-area .wc-calendar-head h2 {
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            #html-content-type-area .wc-powers h2 {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            #html-content-type-area .wc-calendar-head p {
+                font-size: 14px;
+                margin-top: 6px;
+            }
+
+            #html-content-type-area .wc-tabs {
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                margin-top: 10px;
+                gap: 6px;
+            }
+
+            #html-content-type-area .wc-tab {
+                min-height: 56px;
+                padding: 7px 8px;
+            }
+
+            #html-content-type-area .wc-tab::before {
+                inset: -16px 8px auto;
+                height: 44px;
+                filter: blur(16px);
+            }
+
+            #html-content-type-area .wc-offers,
+            #html-content-type-area .wc-powers {
+                margin-top: 12px;
+                padding: 12px;
+            }
+
+            #html-content-type-area .wc-panel,
+            #html-content-type-area .wc-powers-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            #html-content-type-area .wc-powers {
+                padding-top: 16px;
+            }
+
+            #html-content-type-area .wc-powers-grid {
+                margin-top: 12px;
+            }
+
+            #html-content-type-area .wc-powers-grid .wc-wide {
+                grid-column: auto;
+            }
+
+            #html-content-type-area .wc-powers-cta {
+                margin-top: 18px;
+            }
+
+            #html-content-type-area .wc-powers-cta .wc-btn {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #html-content-type-area .wc-page {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            #html-content-type-area .wc-intro {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            #html-content-type-area .wc-intro h1 {
+                font-size: 22px;
+            }
+
+            #html-content-type-area .wc-intro p:first-of-type {
+                font-size: 14px;
+                line-height: 19px;
+            }
+
+            #html-content-type-area .wc-intro p:last-child {
+                font-size: 12px;
+                line-height: 16px;
+            }
+
+            #html-content-type-area .wc-tab-title {
+                font-size: 10px;
+                margin-bottom: 4px;
+                line-height: 1.5;
+            }
+
+            #html-content-type-area .wc-tab-date {
+                font-size: 9px;
+                line-height: 1.5;
+            }
+
+            #html-content-type-area .wc-tab-date-icon {
+                width: 10px;
+                height: 10px;
+                margin-right: 4px;
+            }
+
+            #html-content-type-area .wc-offers,
+            #html-content-type-area .wc-powers {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+        @media (max-width: 460px) {
+            #html-content-type-area .wc-calendar-head {
+                margin-top: 30px;
+            }
+
+            #html-content-type-area .wc-calendar-head h2 {
+                font-size: 13px;
+            }
+
+            #html-content-type-area .wc-calendar-head p {
+                font-size: 13px;
+                margin-top: 5px;
+            }
+
+            #html-content-type-area .wc-tabs {
+                margin-top: 8px;
+                gap: 4px;
+            }
+
+            #html-content-type-area .wc-tab {
+                min-height: 50px;
+                padding: 6px 6px;
+            }
+
+            #html-content-type-area .wc-tab-title {
+                font-size: 9px;
+                margin-bottom: 3px;
+                line-height: 1.5;
+            }
+
+            #html-content-type-area .wc-tab-date {
+                font-size: 8px;
+                line-height: 1.5;
+            }
+
+            #html-content-type-area .wc-tab-date-icon {
+                width: 9px;
+                height: 9px;
+                margin-right: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin:0; background:#1F1F1F;">
+    <div id="html-content-type-area">
+        <input class="wc-hidden-input" type="radio" name="wc-stage" id="wc-stage-1" checked>
+        <input class="wc-hidden-input" type="radio" name="wc-stage" id="wc-stage-2">
+        <input class="wc-hidden-input" type="radio" name="wc-stage" id="wc-stage-3">
+
+        <main class="wc-page">
+            <div class="wc-wrap">
+                <section class="wc-hero" aria-label="World Cup 2026 intro">
+                    <img class="wc-hero-desktop" src="img/wc_top_desktop_en.png"
+                        alt="World Cup 2026. The royal football journey begins.">
+                    <img class="wc-hero-mobile" src="img/wc_top_mobile_en.png"
+                        alt="World Cup 2026. The royal football journey begins.">
+                </section>
+
+                <section class="wc-intro" aria-label="World Cup introduction">
+                    <div class="wc-intro-copy">
+                        <h1 class="wc-gradient-text">The World Cup has started</h1>
+                        <p>Follow the World Cup, support your team and explore special promos prepared for the whole
+                            tournament.</p>
+                        <p>Get <span class="wc-gradient-text">Freebets, FS, goal rewards, match challenges</span> and
+                            more are waiting throughout the journey.</p>
+                    </div>
+                    <div class="wc-cup">
+                        <img src="img/%D0%A1up.png" alt="World Cup trophy">
+                    </div>
+                </section>
+
+                <section class="wc-match-links" aria-label="Match categories">
+                    <a class="wc-match-card" href="/sports">
+                        <img src="img/All%20Matches.png" alt="All Matches">
+                        <span class="wc-btn">All Matches</span>
+                    </a>
+                    <a class="wc-match-card" href="/sports">
+                        <img src="img/Turkey%20Matches.png" alt="Turkey Matches">
+                        <span class="wc-btn">Turkey Matches</span>
+                    </a>
+                </section>
+
+                <section class="wc-calendar-head" aria-label="World Cup promo calendar">
+                    <h2 class="wc-gradient-text">World Cup Promo Calendar</h2>
+                    <p>New royal offers unlock through every stage</p>
+                    <div class="wc-tabs">
+                        <label class="wc-tab wc-tab-1" for="wc-stage-1">
+                            <span class="wc-tab-title wc-gradient-text">Opening Rush</span>
+                            <span class="wc-tab-date"><img class="wc-tab-date-icon" src="img/calendar.png" alt="">11.06 – 16.06</span>
+                        </label>
+                        <label class="wc-tab wc-tab-2" for="wc-stage-2">
+                            <span class="wc-tab-title wc-gradient-text">Group Stage</span>
+                            <span class="wc-tab-date"><img class="wc-tab-date-icon" src="img/calendar.png" alt="">17.06 – 22.06</span>
+                        </label>
+                        <label class="wc-tab wc-tab-3" for="wc-stage-3">
+                            <span class="wc-tab-title wc-gradient-text">Knockout Chase</span>
+                            <span class="wc-tab-date"><img class="wc-tab-date-icon" src="img/calendar.png" alt="">23.06 – 29.06</span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="wc-offers" aria-label="Calendar offers">
+                    <div class="wc-panel wc-panel-1">
+                        <a class="wc-promo-link" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                    srcset="img/T%C3%BCrkiye%20Goal%20Jackpot_mobile.png">
+                                <img src="img/T%C3%BCrkiye%20Goal%20Jackpot_Desktop.png" alt="Türkiye Goal Jackpot">
+                            </picture>
+                        </a>
+                        <a class="wc-promo-link" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="img/World%20Cup%20Scratch%20Card_mobile.png">
+                                <img src="img/World%20Cup%20Scratch%20Card_Desktop.png" alt="World Cup Scratch Card">
+                            </picture>
+                        </a>
+                    </div>
+
+                    <div class="wc-panel wc-panel-2">
+                        <a class="wc-promo-link" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="img/T%C3%BCrkiye%20Goal%20Boost_mobile.png">
+                                <img src="img/T%C3%BCrkiye%20Goal%20Boost_Desktop.png" alt="Türkiye Goal Boost">
+                            </picture>
+                        </a>
+                        <a class="wc-promo-link" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="img/30%25%20Freebet%20Boost_mobile.png">
+                                <img src="img/30%25%20Freebet%20Boost_Desktop.png" alt="30% Freebet Boost">
+                            </picture>
+                        </a>
+                    </div>
+
+                    <div class="wc-panel wc-panel-3">
+                        <a class="wc-promo-link" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="img/Pick%20the%20Winner_mobile.png">
+                                <img src="img/Pick%20the%20Winner_Desktop.png" alt="Pick the Winner">
+                            </picture>
+                        </a>
+                        <a class="wc-promo-link" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="img/3%20Bets%20Challenge_mobile.png">
+                                <img src="img/3%20Bets%20Challenge_Desktop.png" alt="3 Bets Challenge">
+                            </picture>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="wc-powers" aria-label="World Cup extra powers">
+                    <h2 class="wc-gradient-text">World Cup Extra Powers</h2>
+                    <div class="wc-powers-grid">
+                        <a class="wc-promo-link" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="img/Bonus%20Shop%20Deals_mobile.png">
+                                <img src="img/Bonus%20Shop%20Deals_Desktop.png" alt="Bonus Shop Deals">
+                            </picture>
+                        </a>
+                        <a class="wc-promo-link" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="img/Win%20Early%20at%2020_mobile.png">
+                                <img src="img/Win%20Early%20at%2020_Desktop.png" alt="Win Early at 2:0">
+                            </picture>
+                        </a>
+                        <a class="wc-promo-link wc-wide" href="/promotions">
+                            <picture>
+                                <source media="(max-width: 640px)"
+                                    srcset="img/Tournament%20Matches,%20Higher%20Odds_mobile.png">
+                                <img src="img/Tournament%20Matches,%20Higher%20Odds_Desktop.png"
+                                    alt="Tournament Matches, Higher Odds">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="wc-powers-cta">
+                        <a class="wc-btn" href="/promotions">View Promos</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
